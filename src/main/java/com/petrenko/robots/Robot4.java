@@ -11,7 +11,7 @@ public class Robot4 extends Thread {
     private static final Logger LOGGER = LoggerFactory.getLogger(Robot4.class);
     private int programmingPoints = 0;
     private int brokenMicrochips = 0;
-    final Random random = new Random();
+    private final Random random = new Random();
 
     @SneakyThrows
     @Override

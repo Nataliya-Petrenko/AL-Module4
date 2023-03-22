@@ -11,7 +11,7 @@ public class Robot5 extends Thread {
     private static final Logger LOGGER = LoggerFactory.getLogger(Robot5.class);
     private int finaleWorkPoints = 0;
     private final Robot1 robot1;
-    final Random random = new Random();
+    private final Random random = new Random();
 
     public Robot5(Robot1 robot1) {
         this.robot1 = robot1;

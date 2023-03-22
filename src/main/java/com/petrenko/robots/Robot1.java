@@ -10,14 +10,17 @@ import java.util.concurrent.TimeUnit;
 @Getter
 public class Robot1 extends Thread {
     private static final Logger LOGGER = LoggerFactory.getLogger(Robot1.class);
+    private boolean isActive = true;
     private final Fuel fuel = new Fuel(); // todo може бути проблема з одночасним додаванням і використанням палива
-
+    public void disable() {
+        isActive = false;
+    }
     @SneakyThrows
     @Override
     public void run() {
         LOGGER.info("Start working (fuel = {})", fuel.getFuelAfterUsage());
 
-        while (true) {
+        while (isActive) {
             LOGGER.info("Before invoking fuel.increase()");
             fuel.increase();
 

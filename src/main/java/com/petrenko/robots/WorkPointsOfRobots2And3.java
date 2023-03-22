@@ -10,7 +10,13 @@ public class WorkPointsOfRobots2And3 {// todo синхронізувати од�
     private int count = 0;
     private final Random random = new Random();
 
-    public synchronized void increase() {
+    public synchronized void increase(WorkPointsOfRobots2And3 workPoints) {
+
+        if (workPoints.getCount() >= 100) {
+            LOGGER.info("If-return-block in increase() method workPoints = {}", workPoints.getCount());
+            return;
+        }
+
         int additionalWorkPoints = random.nextInt(10, 20);
 
         LOGGER.info("Before increase workPoints");
