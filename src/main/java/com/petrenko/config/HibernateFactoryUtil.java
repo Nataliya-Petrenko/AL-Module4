@@ -5,11 +5,8 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-import javax.persistence.EntityManagerFactory;
-
 public class HibernateFactoryUtil {
     private static SessionFactory sessionFactory;
-    private static EntityManagerFactory entityManagerFactory;
 
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {

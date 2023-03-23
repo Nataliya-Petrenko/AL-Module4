@@ -25,7 +25,7 @@ public class Robots2And3 extends Thread {
         while (workPoints.getCount() < 100) {
 
             LOGGER.info("Before invoking workPoints.increase()");
-            workPoints.increase(workPoints); // todo: do I need synchronize here too additional to syn method?
+            workPoints.increase(workPoints);
             LOGGER.info("After invoking workPoints.increase() (workPoints = {})", workPoints.getCount());
 
             if (workPoints.getCount() >= 100) {

@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class Robot1 extends Thread {
     private static final Logger LOGGER = LoggerFactory.getLogger(Robot1.class);
     private boolean isActive = true;
-    private final Fuel fuel = new Fuel(); // todo може бути проблема з одночасним додаванням і використанням палива
+    private final Fuel fuel = new Fuel();
     public void disable() {
         isActive = false;
     }

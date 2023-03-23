@@ -12,6 +12,7 @@ import java.time.temporal.ChronoUnit;
 
 @Getter
 public class ManagerOfAllRobots extends Thread {
+
     private static final Logger LOGGER = LoggerFactory.getLogger(ManagerOfAllRobots.class);
 
     @SneakyThrows
@@ -60,14 +61,15 @@ public class ManagerOfAllRobots extends Thread {
         LocalDateTime timeFinish = LocalDateTime.now();
 
         detail = new Detail();
-        detail.setBrokenMicrochips(robot4.getBrokenMicrochips());
-        detail.setFuelCreated(robot1.getFuelCreated());
-        detail.setTimeStart(timeStart);
+        detail.setMicrochips(robot4.getBrokenMicrochips());
+        detail.setFuel(robot1.getFuelCreated());
+        detail.setStart(timeStart);
         long seconds = timeStart.until(timeFinish, ChronoUnit.SECONDS);
-        detail.setSecondsSpent(seconds);
+        detail.setSeconds(seconds);
 
         LOGGER.info("New detail has been created {} ", detail);
 
         repository.save(detail);
+
     }
 }

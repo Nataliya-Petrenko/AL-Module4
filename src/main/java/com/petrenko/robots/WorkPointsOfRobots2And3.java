@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Random;
 
-public class WorkPointsOfRobots2And3 {// todo синхронізувати одночасний доступ до класу ресурсів замість синхронізування методу
+public class WorkPointsOfRobots2And3 {
     private static final Logger LOGGER = LoggerFactory.getLogger(WorkPointsOfRobots2And3.class);
     private int count = 0;
     private final Random random = new Random();

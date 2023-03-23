@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Random;
 
-public class Fuel {// todo синхронізувати одночасний доступ до класу ресурсів (для створення і використання палива)
+public class Fuel {
     private static final Logger LOGGER = LoggerFactory.getLogger(Fuel.class);
     private int fuelCreated;
     private int fuelAfterUsage;

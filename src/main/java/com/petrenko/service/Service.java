@@ -1,5 +1,6 @@
 package com.petrenko.service;
 
+import com.petrenko.model.Statistic;
 import com.petrenko.model.Detail;
 import com.petrenko.repository.Repository;
 import com.petrenko.robots.ManagerOfAllRobots;
@@ -7,9 +8,8 @@ import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.Optional;
 
 
 public class Service {
@@ -30,17 +30,21 @@ public class Service {
         return instance;
     }
 
-    @SneakyThrows
-    public void create() {
-
-        ManagerOfAllRobots managerOfAllRobots = new ManagerOfAllRobots();
-        managerOfAllRobots.start();
-//        Detail detail = managerOfAllRobots.getDetail();
-//        repository.save(detail);
-//        return detail;
+    public Statistic getStatisticAllDetails() {
+        return repository.getStatisticAllDetails();
     }
 
-    public List<Detail> getAll() {
-        return repository.getAll();
+    @SneakyThrows
+    public void create() {
+        new ManagerOfAllRobots().start();
+    }
+
+    public List<String> getAllId() {
+        return repository.getAllId();
+    }
+
+
+    public Optional<Detail> getById(String id) {
+        return repository.getById(id);
     }
 }
